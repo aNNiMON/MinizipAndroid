@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Minizip Android</string>
+    
+    <string name="enter_password">Enter password</string>
+    <string name="password">Password:</string>
+    <string name="password_confirm">Confirm password:</string>
+    <string name="passwords_do_not_match">Passwords do not match!</string>
+    <string name="passwords_are_empty">Passwords are empty!</string>
+    
+    <string name="please_wait">Please wait...</string>
+    <string name="register_app_not_found">Register app not found for this file.</string>
+    
+    <string name="error_wrong_password">Wrong password or zip header.</string>
+    <string name="error_create_zip">Unable to create zip file.</string>
+    <string name="error_get_crc32">Unable to get CRC32.</string>
+    <string name="error_while_read">Error while read.</string>
+    <string name="error_file_not_found">File not found.</string>
+    <string name="error_zip_file_not_found">Zip file not found.</string>
+    <string name="error">Unknown error.</string>
+
+</resources>

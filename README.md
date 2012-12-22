@@ -1,0 +1,1 @@
+Android archiver using [minizip library](https://github.com/nmoinvaz/minizip).

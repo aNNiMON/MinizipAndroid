@@ -1,0 +1,9 @@
+.classpath
+.cproject
+.project
+assets/
+bin/
+gen/
+obj/
+tmp/
+project.properties
