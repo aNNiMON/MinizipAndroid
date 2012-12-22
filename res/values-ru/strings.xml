@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_password">Введите пароль</string>
+    <string name="password">Пароль:</string>
+    <string name="password_confirm">Подтверждение пароля:</string>
+    <string name="passwords_do_not_match">Пароли не совпадают!</string>
+    <string name="passwords_are_empty">Пароли пусты!</string>
+    
+    <string name="please_wait">Пожалуйста, подождите...</string>
+    <string name="register_app_not_found">Для этого файла нет зарегистрированной программы.</string>
+    
+    <string name="error_wrong_password">Неверный пароль или заголовок архива.</string>
+    <string name="error_create_zip">Невозможно создать zip архив.</string>
+    <string name="error_get_crc32">Невозможно получить CRC32.</string>
+    <string name="error_while_read">Ошибка при чтении.</string>
+    <string name="error_file_not_found">Файл не найден.</string>
+    <string name="error_zip_file_not_found">Файл архива не найден.</string>
+    <string name="error">Неизвестная ошибка.</string>
+
+</resources>
