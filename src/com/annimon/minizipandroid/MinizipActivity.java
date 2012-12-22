@@ -50,6 +50,14 @@ public class MinizipActivity extends ListActivity implements FileOpenEventListen
                 }
             }
         };
+        
+        // Other program sends zip file to this app.
+        Intent intent = getIntent();
+        if (intent.getData() != null) {
+            String zipFilePath = intent.getData().getEncodedPath();
+            File zipFile = new File(zipFilePath);
+            onFileOpen(zipFile);
+        }
     }
     
     @Override
