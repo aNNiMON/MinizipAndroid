@@ -3,6 +3,8 @@ MinizipAndroid
 Android archiver using the [minizip library](https://github.com/nmoinvaz/minizip).
 Requires Android 2.2 or higher.
 
+Binary apk file available [here](http://annimon.com/files/MinizipAndroid.apk).
+
 Build application
 -----------------
 Fetch the source code with Git:

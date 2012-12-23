@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Minizip Android</string>
 
     <string name="enter_password">Введите пароль</string>
     <string name="password">Пароль:</string>
