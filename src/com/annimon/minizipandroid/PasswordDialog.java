@@ -2,7 +2,6 @@ package com.annimon.minizipandroid;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -14,19 +13,15 @@ import android.widget.TextView;
  * Dialog for input and check passwords.
  * @author aNNiMON
  */
-public class PasswordDialog extends Dialog {
+public abstract class PasswordDialog extends Dialog {
     
     private Button okButton;
     private EditText passwordText1, passwordText2;
     private TextView infoText;
     private TextWatcher passwordWatcher;
     
-    private String password;
-
     public PasswordDialog(Context context) {
         super(context);
-        
-        password = null;
         
         configureTextWatcher();
         
@@ -34,22 +29,14 @@ public class PasswordDialog extends Dialog {
         setContentView(R.layout.password_dialog);
         setCancelable(true);
         
-        setOnCancelListener(new DialogInterface.OnCancelListener() {
-
-            public void onCancel(DialogInterface dialog) {
-                password = null;
-                dialog.cancel();
-            }
-            
-        });
-        
         okButton = (Button) findViewById(R.id.okButton);
         okButton.setEnabled(false);
         okButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                password = passwordText1.getText().toString();
                 dismiss();
+                String password = passwordText1.getText().toString();
+                onPasswordEntered(password);
             }
         });
         
@@ -62,9 +49,7 @@ public class PasswordDialog extends Dialog {
         infoText = (TextView) findViewById(R.id.infoTextView);
     }
     
-    public String getPassword() {
-        return password;
-    }
+    protected abstract void onPasswordEntered(String password);
     
     private void configureTextWatcher() {
         passwordWatcher = new TextWatcher() {
