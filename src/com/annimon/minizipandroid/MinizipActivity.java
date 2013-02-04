@@ -1,9 +1,12 @@
 package com.annimon.minizipandroid;
 
 import java.io.File;
+import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
@@ -11,6 +14,7 @@ public class MinizipActivity extends ListActivity implements FileOpenEventListen
     
     private FileBrowser fileBrowser;
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,22 @@ public class MinizipActivity extends ListActivity implements FileOpenEventListen
             File zipFile = new File(zipFilePath);
             onFileOpen(zipFile);
         }
+        
+        // Using ActionBar on Android >= 3.0 to navigate backward.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // Clicked on ActionBar.
+                fileBrowser.upDirectory();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     
     @Override
